@@ -8,26 +8,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
     <script src="p5.play.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-database.js"></script>
-
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
 
     <script>
-      //Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyBYV9kWljd-8zlRsYSLGIv2zBX4MhkNAo8",
-        authDomain: "multiplayer-car-racing-game.firebaseapp.com",
-        databaseURL: "https://multiplayer-car-racing-game.firebaseio.com",
-        projectId: "multiplayer-car-racing-game",
-        storageBucket: "",
-        messagingSenderId: "936147099930",
-        appId: "1:936147099930:web:dba47c5bb648f4ef"
-      };
-      // // Initialize Firebase
-      // firebase.initializeApp(firebaseConfig);
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCr_KoGmc3XWFFplNYBvzs0Y-VhLJzw6p4",
+            authDomain: "cargame-cf96b.firebaseapp.com",
+            databaseURL: "https://cargame-cf96b.firebaseio.com",
+            projectId: "cargame-cf96b",
+            storageBucket: "cargame-cf96b.appspot.com",
+            messagingSenderId: "497555988257",
+            appId: "1:497555988257:web:37be470e3bae466c0c6860"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
     </script>
 
     <script src="js/Player.js"></script>

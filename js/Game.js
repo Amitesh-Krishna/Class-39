@@ -5,8 +5,7 @@ class Game {
     var gameStateRef  = database.ref('gameState');
     gameStateRef.on("value",function(data){
        gameState = data.val();
-    })
-
+    });
   }
 
   update(state){
@@ -26,25 +25,39 @@ class Game {
       form = new Form()
       form.display();
     }
+    car1 = createSprite(100,200,30,200);
+    car2 = createSprite(300,200,30,200);
+    car3 = createSprite(500,200,30,200);
+    car4 = createSprite(700,200,30,200);
+    cars = [car1,car2,car3,car4];
   }
 
   play(){
+
     form.hide();
     textSize(30);
     text("Game Start", 120, 100)
     Player.getPlayerInfo();
 
     if(allPlayers !== undefined){
-      var display_position = 130;
+      var index=0;
+      var x = 0,y;
+      //var display_position = 130;
       for(var plr in allPlayers){
-        if (plr === "player" + player.index)
-          fill("red")
-        else
-          fill("black");
-
-        display_position+=20;
-        textSize(15);
-        text(allPlayers[plr].name + ": " + allPlayers[plr].distance, 120,display_position)
+        index++;
+        x+=200;
+        y = displayHeight - allPlayers[plr].distance;
+        var curCar = cars[index-1];
+        curCar.x = x;
+        curCar.y = y;
+        if(index == player.index){
+          curCar.shapeColor = "red";
+          camera.x = curCar.x;
+          camera.y = curCar.y;
+        }
+        //display_position+=20;
+        //textSize(15);
+        //text(allPlayers[plr].name + ": " + allPlayers[plr].distance, 120,display_position);
       }
     }
 
@@ -52,5 +65,7 @@ class Game {
       player.distance +=50
       player.update();
     }
+
+    drawSprites();
   }
 }
